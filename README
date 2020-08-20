@@ -1,0 +1,42 @@
+- Find
+
+    Campo 1: Para las busquedas tipo String define si es case sensitive o no. Sera case sensitive cuando sea
+    diferente de *.
+
+    Campo 2: Definen el tipo de atributo, por ejemplo String, Integer, LocalDate entre otros. Estos campos
+    ya estan definidos:
+
+    String: *
+    UUID: ~
+    Boolean: _
+
+    Numericos:
+    Integer: -
+    Long: {
+    Double:[
+    Big Decimal:} (No se implementa Equal)
+
+    Fecha:
+    Localdate:!
+    LocalDateTime: .
+    ZonedDateTime: |
+    OffsetDateTime: @
+
+
+    Campo 3: Define si es "OR" el predicado, por defecto es "AND"
+
+    Text: Nombre del campo por el que queremos buscar.
+
+    Campo 4: Operador, este puede ser:
+    Igualdad: ":"
+    Negación: "!"
+
+    Campo 5 : Prefijo, este puede ser un "*"
+
+    Campo 6 : Valor por el cual queremos buscar.
+
+    Campo 7 : Sufijo, este puede ser un "*"
+
+- Sort
+
+Campo 1: Define si se considera case sensitive o no, cuando hay un "*" ignora case sensitive.
