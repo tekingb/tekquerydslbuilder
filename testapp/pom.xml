@@ -5,13 +5,13 @@
     <parent>
         <artifactId>tekingb-tekquerydslbuilder</artifactId>
         <groupId>com.tekingb.tekquerydslbuilder</groupId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>0.1.0-Alpha</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.tekingb.testapp</groupId>
     <artifactId>tekingb-testapp</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.0-Alpha</version>
 
     <dependencies>
         <dependency>
@@ -26,7 +26,7 @@
         <dependency>
             <groupId>com.tekingb.tekboolexp</groupId>
             <artifactId>tekingb-tekboolexp</artifactId>
-            <version>0.0.1.0-SNAPSHOT</version>
+            <version>0.1.0-Alpha</version>
         </dependency>
 
         <dependency>
