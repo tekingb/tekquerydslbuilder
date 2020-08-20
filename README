@@ -1,4 +1,4 @@
-1. Add dependencies to the pom:
+### Required dependencies:
 
         <dependency>
             <groupId>com.tekingb.tekboolexp</groupId>
@@ -39,8 +39,9 @@
                 </plugins>
             </build>
 
-2. Class
+### Class
 
+```sh
 @Entity
 @Table(name = "tentity")
 public class tentity implements Serializable {
@@ -51,9 +52,10 @@ private String name;
 // Getters and Setters
 
 }
+```
 
-3. Add Beans:
-
+## Beans:
+```sh
   @Bean
   public tekNumberPath tekNumberPath() {
     return new tekNumberPath();
@@ -78,18 +80,18 @@ private String name;
   public tekParamService tekParamService() {
     return new tekParam(0, 50, "name");
   }
+```
 
-
-4. Repository.
-
+### Repository.
+```sh
 @Repository
 public interface tEntityRepository
     extends JpaRepository<tentity, UUID>, QuerydslPredicateExecutor<tentity> {}
+```
 
+### Service.
 
-5. Service.
-
-
+```
 @Service
 public class tentityService{
 
@@ -98,17 +100,17 @@ public class tentityService{
     }
 
 }
+```
 
+### Controller
 
-6. Controller
-
+```sh
 @RestController
 @RequestMapping("/api")
 public class cityResource {
 
 
     private PathBuilder<tentity> entityPath = new PathBuilder<>(tentity.class, "tentity");
-
     private findAllParams findAllParams = new findAllParams();
 
     @Autowired
@@ -116,9 +118,6 @@ public class cityResource {
 
     @Autowired
     private tentityService tentityService;
-
-
-
 
     @RequestMapping(method = RequestMethod.GET, value = "/tentity/viewAll")
 
@@ -144,11 +143,11 @@ public class cityResource {
     }
 
 }
+```
 
 
-***************************************************
 
-Search:
+### Search:
 				field1 field2 field3 key operator prefixValue value suffixValue
 
 
@@ -257,7 +256,7 @@ Search:
 
 
 
-- Sort
+### Sort
 
 					field1 key operator value
 
@@ -275,6 +274,6 @@ Search:
     value: "ASC" or "DESC"
 
 
-- Pagination
+### Pagination
 
 Example: "page:0,size:50
