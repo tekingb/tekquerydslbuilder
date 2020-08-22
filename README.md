@@ -3,7 +3,7 @@
         <dependency>
             <groupId>com.tekingb.tekboolexp</groupId>
             <artifactId>tekingb-tekboolexp</artifactId>
-            <version>0.1.0-SNAPSHOT</version>
+            <version>0.1.0-Alpha</version>
         </dependency>
 
        <dependency>
