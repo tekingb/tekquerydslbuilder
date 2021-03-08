@@ -57,9 +57,9 @@ public class tekPredicate {
 
     // For numeric search
     if (criteria.getKeyType().equals("-")
-        || criteria.getKeyType().equals("[")
-        || criteria.getKeyType().equals("}")
-        || criteria.getKeyType().equals("{")) {
+        || criteria.getKeyType().equals(";")
+        || criteria.getKeyType().equals(")")
+        || criteria.getKeyType().equals("(")) {
       logger.debug("Get boolean expression for a numeric search");
       return tekNumberPath.getNumberPath(entityPath, op, criteria);
     }

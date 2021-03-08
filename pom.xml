@@ -17,7 +17,7 @@
 
     <groupId>com.tekingb.tekquerydslbuilder</groupId>
     <artifactId>tekingb-tekquerydslbuilder</artifactId>
-    <version>0.1.0-Alpha</version>
+    <version>1.0.0</version>
     <description>Get params for FindAll method</description>
 
 
@@ -36,7 +36,7 @@
             <organizationUrl>https://tekingb.com</organizationUrl>
         </developer>
     </developers>
-
+<!--
     <scm>
         <connection>scm:git:git://github.com/tekingb/tekingbConfig.git</connection>
         <developerConnection>scm:git:ssh://github.com/tekingb/tekingbConfig.git</developerConnection>
@@ -53,7 +53,23 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+-->
 
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>localhost.localdomain-snapshots</name>
+            <url>http://192.168.0.110:8081/artifactory/libs-snapshot</url>
+        </snapshotRepository>
+
+        <repository>
+            <id>central</id>
+            <name>localhost.localdomain-releases</name>
+            <url>http://192.168.0.110:8081/artifactory/libs-release</url>
+        </repository>
+
+    </distributionManagement>
 
     <build>
         <plugins>
@@ -124,7 +140,7 @@
                     </execution>
                 </executions>
             </plugin>
-
+<!--
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
@@ -136,7 +152,7 @@
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
-
+-->
         </plugins>
     </build>
 

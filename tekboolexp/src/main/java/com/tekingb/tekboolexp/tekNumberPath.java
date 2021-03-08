@@ -45,7 +45,8 @@ public final class tekNumberPath {
             && criteria.getSuffix().contains("*");
 
     String comparator = getComparator(startWithAsterisk, endWithAsterisk);
-
+    logger.debug("CRITERIA_0");
+    logger.debug(criteria.getKeyType());
     switch (criteria.getKeyType()) {
       case "-": // Numeric Integer
         logger.debug("Integer Search");
@@ -99,7 +100,7 @@ public final class tekNumberPath {
             }
         }
 
-      case "[": // Numeric Double
+      case ";": // Numeric Double
         logger.debug("Double Search");
         final Double doubleValue;
         final Double doubleValue1;
@@ -151,7 +152,7 @@ public final class tekNumberPath {
             }
         }
 
-      case "{": // Numeric Long
+      case "(": // Numeric Long
         logger.debug("Long Search");
 
         final Long longValue;
@@ -203,7 +204,7 @@ public final class tekNumberPath {
             }
         }
 
-      case "}": // Numeric BigDecimal
+      case ")": // Numeric BigDecimal
         logger.debug("Big Decimal Search");
 
         final BigDecimal bigDecimalValue;
@@ -256,6 +257,9 @@ public final class tekNumberPath {
             }
         }
     }
+    logger.debug("CRITERIA_SYMBOL");
+    logger.debug(criteria.getKeyType());
+
     return null;
   }
 }

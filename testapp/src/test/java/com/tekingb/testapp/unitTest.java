@@ -916,7 +916,7 @@ public class unitTest {
   @DisplayName("Query double equal than")
   public void query_double_equal() {
     findAllParams findAllParams =
-        tFind.find("#[#quantityDouble:310.32344", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#;#quantityDouble:310.32344", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -927,7 +927,7 @@ public class unitTest {
   @DisplayName("Query double equal negation")
   public void query_double_equal_negation() {
     findAllParams findAllParams =
-        tFind.find("#[#quantityDouble!310.32344", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#;#quantityDouble!310.32344", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -939,7 +939,7 @@ public class unitTest {
   public void query_double_between() {
     findAllParams findAllParams =
         tFind.find(
-            "#[#quantityDouble:*310.32344;320.32344*", "*name:desc", "page:0,size:50", entityPath);
+            "#;#quantityDouble:*310.32344;320.32344*", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -951,7 +951,7 @@ public class unitTest {
   public void query_double_between_negation() {
     findAllParams findAllParams =
         tFind.find(
-            "#[#quantityDouble!*310.32344;320.32344*", "*name:desc", "page:0,size:50", entityPath);
+            "#;#quantityDouble!*310.32344;320.32344*", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -963,7 +963,7 @@ public class unitTest {
   @DisplayName("Query double greater than")
   public void query_double_greater_than() {
     findAllParams findAllParams =
-        tFind.find("#[#quantityDouble:*39.32344", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#;#quantityDouble:*39.32344", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -974,7 +974,7 @@ public class unitTest {
   @DisplayName("Query double greater than negation")
   public void query_double_greater_than_negation() {
     findAllParams findAllParams =
-        tFind.find("#[#quantityDouble!*39.32344", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#;#quantityDouble!*39.32344", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -986,7 +986,7 @@ public class unitTest {
   @DisplayName("Query double less than")
   public void query_double_less_than() {
     findAllParams findAllParams =
-        tFind.find("#[#quantityDouble:37.32344*", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#;#quantityDouble:37.32344*", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -997,7 +997,7 @@ public class unitTest {
   @DisplayName("Query double less than negation")
   public void query_double_less_than_negation() {
     findAllParams findAllParams =
-        tFind.find("#[#quantityDouble!37.32344*", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#;#quantityDouble!37.32344*", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -1009,7 +1009,7 @@ public class unitTest {
   @DisplayName("Query long equal than")
   public void query_long_equal() {
     findAllParams findAllParams =
-        tFind.find("#{#quantity:945234521", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#(#quantity:945234521", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -1020,7 +1020,7 @@ public class unitTest {
   @DisplayName("Query long equal negation")
   public void query_long_equal_negation() {
     findAllParams findAllParams =
-        tFind.find("#{#quantity!945234521", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#(#quantity!945234521", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -1032,7 +1032,7 @@ public class unitTest {
   public void query_long_between() {
     findAllParams findAllParams =
         tFind.find(
-            "#{#quantity:*545234521;1045234521*", "*name:desc", "page:0,size:50", entityPath);
+            "#(#quantity:*545234521;1045234521*", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -1044,7 +1044,7 @@ public class unitTest {
   public void query_long_between_negation() {
     findAllParams findAllParams =
         tFind.find(
-            "#{#quantity!*545234521;1045234521*", "*name:desc", "page:0,size:50", entityPath);
+            "#(#quantity!*545234521;1045234521*", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -1055,7 +1055,7 @@ public class unitTest {
   @DisplayName("Query long greater than")
   public void query_long_greater_than() {
     findAllParams findAllParams =
-        tFind.find("#{#quantity:*945234521", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#(#quantity:*945234521", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -1066,7 +1066,7 @@ public class unitTest {
   @DisplayName("Query long greater than negation")
   public void query_long_greater_than_negation() {
     findAllParams findAllParams =
-        tFind.find("#{#quantity!*945234521", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#(#quantity!*945234521", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -1078,18 +1078,19 @@ public class unitTest {
   @DisplayName("Query long less than")
   public void query_long_less_than() {
     findAllParams findAllParams =
-        tFind.find("#{#quantity:745234521*", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#(#quantity:745234521*", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
     assertEquals(2, value, "Query Integer less than fail: " + "Expected: 2 " + "Got: " + value);
   }
 
+
   @Test
   @DisplayName("Query long less than negation")
   public void query_long_less_than_negation() {
     findAllParams findAllParams =
-        tFind.find("#{#quantity!745234521*", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#(#quantity!745234521*", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -1101,7 +1102,7 @@ public class unitTest {
   @DisplayName("Query big decimal Between")
   public void query_big_decimal_between() {
     findAllParams findAllParams =
-        tFind.find("#}#price:*105320.6;205326.6*", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#)#price:*105320.6;205326.6*", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -1112,7 +1113,7 @@ public class unitTest {
   @DisplayName("Query big decimal Between Negation")
   public void query_big_decimal_between_negation() {
     findAllParams findAllParams =
-        tFind.find("#}#price!*105320.6;205326.6*", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#)#price!*105320.6;205326.6*", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -1124,7 +1125,7 @@ public class unitTest {
   @DisplayName("Query big decimal greater than")
   public void query_big_decimal_greater_than() {
     findAllParams findAllParams =
-        tFind.find("#}#price:*95321", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#)#price:*95321", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -1136,7 +1137,7 @@ public class unitTest {
   @DisplayName("Query big decimal greater than negation")
   public void query_big_decimal_greater_than_negation() {
     findAllParams findAllParams =
-        tFind.find("#}#price!*95321", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#)#price!*95321", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -1150,7 +1151,7 @@ public class unitTest {
   @DisplayName("Query big decimal less than")
   public void query_big_decimal_less_than() {
     findAllParams findAllParams =
-        tFind.find("#}#price:75325*", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#)#price:75325*", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
@@ -1161,7 +1162,7 @@ public class unitTest {
   @DisplayName("Query big decimal less than negation")
   public void query_big_decimal_less_than_negation() {
     findAllParams findAllParams =
-        tFind.find("#}#price!75325*", "*name:desc", "page:0,size:50", entityPath);
+        tFind.find("#)#price!75325*", "*name:desc", "page:0,size:50", entityPath);
     Iterable<tentity> tEntities =
         tEntityRepository.findAll(findAllParams.getExp(), findAllParams.getPageRequest());
     long value = StreamSupport.stream(tEntities.spliterator(), false).count();
