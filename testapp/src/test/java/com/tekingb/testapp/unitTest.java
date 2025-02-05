@@ -1,6 +1,6 @@
 package com.tekingb.testapp;
 
-import com.google.common.collect.Iterables;
+// The error occurs because the Guava library (which contains com.google.common) is not included as a dependency in the project's pom.xml
 import com.querydsl.core.types.dsl.PathBuilder;
 import com.tekingb.tekboolexp.findAllParams;
 import com.tekingb.tekboolexp.tekParamService;
@@ -11,12 +11,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import jakarta.persistence.Entity;  // Update imports to use jakarta instead of javax
+import com.google.common.collect.Iterables; // Add this import
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 import java.util.stream.StreamSupport;
@@ -64,13 +63,15 @@ public class unitTest {
     tutorial tut1 = new tutorial("Tut1", "Desc1", true);
     entityManager.persist(tut1);
 
+
     tentity tentity1 =
         new tentity(
             1,
             "tentity25",
             5,
             OffsetDateTime.parse("2018-05-04T00:00:00+00:00"),
-            ZonedDateTime.parse("2018-05-04 00:00:00 UTC+00:00", formatter),
+            ZonedDateTime.parse("2018-05-04T00:00:00Z"),
+
             LocalDateTime.parse("2018-05-04T00:00:00"),
             LocalDate.parse("2018-05-04"),
             true,
@@ -87,7 +88,7 @@ public class unitTest {
             "tekEntity55",
             10,
             OffsetDateTime.parse("2018-10-04T00:00:00+00:00"),
-            ZonedDateTime.parse("2018-10-04 00:00:00 UTC+00:00", formatter),
+            ZonedDateTime.parse("2018-10-04T00:00:00Z"),
             LocalDateTime.parse("2018-10-04T00:00:00"),
             LocalDate.parse("2018-10-04"),
             false,
@@ -104,7 +105,7 @@ public class unitTest {
             "tEntity25",
             10,
             OffsetDateTime.parse("2018-10-04T00:00:00+00:00"),
-            ZonedDateTime.parse("2018-10-04 00:00:00 UTC+00:00", formatter),
+            ZonedDateTime.parse("2018-10-04T00:00:00Z"),
             LocalDateTime.parse("2018-10-04T00:00:00"),
             LocalDate.parse("2018-10-04"),
             true,
@@ -121,7 +122,7 @@ public class unitTest {
             "tekEntity25",
             8,
             OffsetDateTime.parse("2018-08-04T00:00:00+00:00"),
-            ZonedDateTime.parse("2018-08-04 00:00:00 UTC+00:00", formatter),
+            ZonedDateTime.parse("2018-08-04T00:00:00Z"),
             LocalDateTime.parse("2018-08-04T00:00:00"),
             LocalDate.parse("2018-08-04"),
             true,
@@ -138,7 +139,7 @@ public class unitTest {
             "tentity25",
             20,
             OffsetDateTime.parse("2018-12-04T00:00:00+00:00"),
-            ZonedDateTime.parse("2018-12-04 00:00:00 UTC+00:00", formatter),
+            ZonedDateTime.parse("2018-12-04T00:00:00Z"),
             LocalDateTime.parse("2018-12-04T00:00:00"),
             LocalDate.parse("2018-12-04"),
             true,
@@ -155,7 +156,7 @@ public class unitTest {
             "tekEntity55",
             10,
             OffsetDateTime.parse("2018-10-04T00:00:00+00:00"),
-            ZonedDateTime.parse("2018-10-04 00:00:00 UTC+00:00", formatter),
+            ZonedDateTime.parse("2018-10-04T00:00:00Z"),
             LocalDateTime.parse("2018-10-04T00:00:00"),
             LocalDate.parse("2018-10-04"),
             false,
@@ -172,7 +173,7 @@ public class unitTest {
             "tEntity25",
             9,
             OffsetDateTime.parse("2018-09-04T00:00:00+00:00"),
-            ZonedDateTime.parse("2018-09-04 00:00:00 UTC+00:00", formatter),
+            ZonedDateTime.parse("2018-09-04T00:00:00Z"),
             LocalDateTime.parse("2018-09-04T00:00:00"),
             LocalDate.parse("2018-09-04"),
             true,
@@ -189,7 +190,7 @@ public class unitTest {
             "tekEntity25",
             3,
             OffsetDateTime.parse("2008-03-09T12:00:00+00:00"),
-            ZonedDateTime.parse("2008-03-09 12:00:00 UTC+00:00", formatter),
+            ZonedDateTime.parse("2008-03-09T12:00:00Z"),
             LocalDateTime.parse("2008-03-03T00:00:00"),
             LocalDate.parse("2008-03-03"),
             true,
